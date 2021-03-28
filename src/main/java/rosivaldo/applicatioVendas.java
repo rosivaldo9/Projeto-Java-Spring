@@ -35,7 +35,7 @@ public class applicatioVendas {
             List<Cliente> todosClientes = clientes.obterTodos();
             todosClientes.forEach(System.out::println);
 
- /*           System.out.println("Atualizando  clientes");
+           System.out.println("Atualizando  clientes");
             todosClientes.forEach(c -> {
                 c.setNome(c.getNome() + " atualizado");
                 clientes.atualizar(c);
@@ -45,14 +45,14 @@ public class applicatioVendas {
 
 
             System.out.println("buscando clientes por nome");
-            clientes.buscarPorNome("Tania atualizado").forEach(System.out::println);
+            clientes.buscarPorNome("sivald").forEach(System.out::println);
 
             todosClientes = clientes.obterTodos();
             todosClientes.forEach(System.out::println);
 
-            System.out.println("Deletando clientes");
+           System.out.println("Deletando clientes");
             clientes.obterTodos().forEach(c ->{
-                clientes.deleta(c);
+                clientes.deletar(c.getId());
             });
             todosClientes = clientes.obterTodos();
           if( todosClientes.isEmpty()) {
@@ -61,7 +61,7 @@ public class applicatioVendas {
 
               todosClientes.forEach(System.out::println);
           }
-*/
+
         };
     }
 
