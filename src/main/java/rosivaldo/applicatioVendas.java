@@ -35,7 +35,7 @@ public class applicatioVendas {
             List<Cliente> todosClientes = clientes.obterTodos();
             todosClientes.forEach(System.out::println);
 
-            System.out.println("Atualizando  clientes");
+ /*           System.out.println("Atualizando  clientes");
             todosClientes.forEach(c -> {
                 c.setNome(c.getNome() + " atualizado");
                 clientes.atualizar(c);
@@ -61,7 +61,7 @@ public class applicatioVendas {
 
               todosClientes.forEach(System.out::println);
           }
-
+*/
         };
     }
 

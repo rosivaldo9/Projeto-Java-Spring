@@ -1,5 +1,9 @@
 package rosivaldo.domain.entity;
 
+
+import javax.persistence.*;
+
+@Entity
 public class Cliente {
 
     public Cliente() {
@@ -10,6 +14,8 @@ public class Cliente {
         this.nome = nome;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String nome;
 
