@@ -21,40 +21,40 @@ public class applicatioVendas {
             System.out.println("Salvando clientes");
             Cliente clinte = new Cliente();
             clinte.setNome("Rosivaldo");
-            clientes.salvar(clinte);
+            clientes.save(clinte);
 
             Cliente clinte1 = new Cliente();
             clinte1.setNome("Tania");
-            clientes.salvar(clinte1);
+            clientes.save(clinte1);
 
             Cliente clinte2 = new Cliente();
             clinte2.setNome("Arthur");
-            clientes.salvar(clinte2);
+            clientes.save(clinte2);
 
             System.out.println("Listando clientes");
-            List<Cliente> todosClientes = clientes.obterTodos();
+            List<Cliente> todosClientes = clientes.findAll();
             todosClientes.forEach(System.out::println);
 
            System.out.println("Atualizando  clientes");
             todosClientes.forEach(c -> {
                 c.setNome(c.getNome() + " atualizado");
-                clientes.atualizar(c);
+                clientes.save(c);
             });
-            todosClientes = clientes.obterTodos();
+            todosClientes = clientes.findAll();
             todosClientes.forEach(System.out::println);
 
 
             System.out.println("buscando clientes por nome");
-            clientes.buscarPorNome("sivald").forEach(System.out::println);
+            clientes.findByNomeLike("sivald").forEach(System.out::println);
 
-            todosClientes = clientes.obterTodos();
+            todosClientes = clientes.findAll();
             todosClientes.forEach(System.out::println);
 
            System.out.println("Deletando clientes");
-            clientes.obterTodos().forEach(c ->{
-                clientes.deletar(c.getId());
+            clientes.findAll().forEach(c ->{
+                clientes.delete(c);
             });
-            todosClientes = clientes.obterTodos();
+            todosClientes = clientes.findAll();
           if( todosClientes.isEmpty()) {
               System.out.println("Nenhum cliente encontrado");
           }else {
