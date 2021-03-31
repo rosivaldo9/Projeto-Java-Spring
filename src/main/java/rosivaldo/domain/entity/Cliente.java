@@ -1,6 +1,8 @@
 package rosivaldo.domain.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -19,6 +21,8 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String nome;
+
+    @JsonIgnore
     @OneToMany(mappedBy = "cliente")
     private Set<pedido> pedidos;
 
