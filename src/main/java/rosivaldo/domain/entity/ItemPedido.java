@@ -1,13 +1,19 @@
 package rosivaldo.domain.entity;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
 public class ItemPedido {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private pedido cliente;
-    private Produto dataPedido;
+    @ManyToOne
+    private pedido pedido;
+    @ManyToOne
+    private Produto produto;
     private Integer quantidade;
 
     public Integer getId() {
@@ -18,20 +24,20 @@ public class ItemPedido {
         this.id = id;
     }
 
-    public pedido getCliente() {
-        return cliente;
+    public rosivaldo.domain.entity.pedido getPedido() {
+        return pedido;
     }
 
-    public void setCliente(pedido cliente) {
-        this.cliente = cliente;
+    public void setPedido(rosivaldo.domain.entity.pedido pedido) {
+        this.pedido = pedido;
     }
 
-    public Produto getDataPedido() {
-        return dataPedido;
+    public Produto getProduto() {
+        return produto;
     }
 
-    public void setDataPedido(Produto dataPedido) {
-        this.dataPedido = dataPedido;
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
 
     public Integer getQuantidade() {

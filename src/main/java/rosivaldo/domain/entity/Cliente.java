@@ -2,6 +2,7 @@ package rosivaldo.domain.entity;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Cliente {
@@ -18,8 +19,19 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String nome;
+    @OneToMany(mappedBy = "cliente")
+    private Set<pedido> pedidos;
+
+    public void setPedidos(Set<pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
+    public Set<pedido> getPedidos() {
+        return pedidos;
+    }
 
     public Integer getId() {
+
         return id;
     }
 
